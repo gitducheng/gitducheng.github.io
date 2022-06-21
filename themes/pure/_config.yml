@@ -6,7 +6,6 @@ menu:
   Tags: tags  # 标签
   Repository: repository  # github repositories
   Books: books  # 豆瓣书单
-  Links: links  # 友链
   About: about  # 关于
 
 # Enable/Disable menu icons
@@ -18,7 +17,6 @@ menu_icons:
   tags: icon-tags
   repository: icon-project
   books: icon-book-fill
-  links: icon-friendship
   about: icon-cup-fill
 
 # rss
@@ -85,18 +83,6 @@ fancybox: false
 search:
   insight: true # you need to install `hexo-generator-json-content` before using Insight Search
   baidu: false # you need to disable other search engines to use Baidu search
-
-# Donate
-donate:
-  enable: true
-  # 微信打赏
-  wechatpay:
-    qrcode: images/donate/wechatpayimg.png
-    title: 微信支付
-  # 支付宝打赏
-  alipay: 
-    qrcode: images/donate/alipayimg.png 
-    title: 支付宝
 
 # Share
 # weibo,qq,qzone,wechat,tencent,douban,diandian,facebook,twitter,google,linkedin
@@ -202,22 +188,11 @@ profile:
   articleSelfBlock: false # 关闭文章下方的自我介绍
   avatar: images/avatar.jpg
   gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
-  author: 昵称
-  author_title: Web Developer & Designer
+  author: PYDC的Blog
+  author_title: Web Developer
   author_description: 个人简介。
-  location: Shenzhen, China
-  follow: https://github.com/cofess
-  # Social Links
-  social:
-    links:
-      github: https://github.com/cofess
-      weibo: http://weibo.com/cofess
-      twitter: https://twitter.com/iwebued
-      # facebook: /
-      # dribbble: /
-      behance: https://www.behance.net/cofess
-      rss: atom.xml
-    link_tooltip: true # enable the social link tooltip, options: true, false
+  location: 北京, China
+  follow: https://github.com/gitducheng
   # My Skills 
   skills:
     Git: ★★★☆☆
@@ -227,13 +202,6 @@ profile:
     Bootstrap: ★★★☆☆
     ThinkPHP: ★★★☆☆
     平面设计: ★★★☆☆
-  # My Personal Links
-  links:
-    Github: https://github.com/cofess
-    Blog: http://blog.cofess.com
-    微博: http://weibo.com/cofess
-    花瓣: http://huaban.com/cofess
-    Behance: https://www.behance.net/cofess
   # My Personal Labels
   labels:
     - 前端
