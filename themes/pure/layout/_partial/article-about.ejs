@@ -9,6 +9,3 @@
     <%- page.content %>
   </div>
 </article>
-<% if (theme.comment.type && !is_home()) { %>
-  <%- partial('post/comment', {post: page}) %>
-<% } %>
