@@ -2,26 +2,6 @@
 
 A brand new default theme for [[Hexo](https://hexo.io)].  [Preview](http://cofess.github.io/) | [English documentation](README.md) | [iconfont](http://blog.cofess.com/hexo-theme-pure/iconfont/demo_fontclass.html)
 
-![](screenshot/pure.png)
-
-## 特色
-
-- 多语言
-- 第三方评论框（友言、来必力、gitment、gitalk）
-- 可展示个人豆瓣书单
-- 可展示个人github托管项目
-- 可设置支付宝、微信打赏
-
-## 主题颜色
-
-![](screenshot/pure-theme-black.png)
-
-![](screenshot/pure-theme-blue.png)
-
-![](screenshot/pure-theme-green.png)
-
-![](screenshot/pure-theme-purple.png)
-
 ## 页面展示
 
 [首页](http://cofess.github.io/) | [归档](http://cofess.github.io/archives/) | [分类](http://cofess.github.io/categories/) | [标签](http://cofess.github.io/tags/) | [项目](http://cofess.github.io/repository/) | [书单](http://cofess.github.io/books/) | [友链](http://cofess.github.io/links/) | [关于](http://cofess.github.io/about/)
