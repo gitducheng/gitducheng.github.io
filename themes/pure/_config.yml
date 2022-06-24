@@ -54,7 +54,6 @@ widgets:
   - board  
   - category
   - tag
-  - tagcloud
   - archive
   - recent_posts
 
