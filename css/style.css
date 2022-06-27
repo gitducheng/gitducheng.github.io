@@ -6068,11 +6068,6 @@ body.no-sidebar .sidebar {
   background-position: center;
 }
 
-.recent-post-list li .item-thumb .thumb .thumb-none {
-  background-image: url("../images/thumb-default.png");
-  background-size: 100% 100%;
-}
-
 .recent-post-list li:hover .item-thumb {
   opacity: 0.8;
 }
