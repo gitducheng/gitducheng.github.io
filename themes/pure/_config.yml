@@ -98,23 +98,12 @@ profile:
   avatar: images/avatar.jpg
   gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
   author: Pydc的Blog
-  author_title: Web Developer
+  author_title: 不会修电脑的程序员不是好工头
   author_description: 个人简介。
   location: 北京, China
   follow: https://github.com/gitducheng
-  # My Skills 
-  skills:
-    Git: ★★★☆☆
-    Gulp: ★★★☆☆
-    Javascript: ★★★☆☆
-    HTML+CSS: ★★★☆☆
-    Bootstrap: ★★★☆☆
-    ThinkPHP: ★★★☆☆
-    平面设计: ★★★☆☆
   # My Personal Labels
   labels:
     - 前端
     - 前端开发
-    - 前端重构
     - Web前端
-    - 网页重构

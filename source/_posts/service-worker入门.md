@@ -1,7 +1,7 @@
 ---
-title: Vue2.x的生命周期详解
-date: 2022-06-17 19:31:36
-tags: JavaScript
+title: service worker入门
+date: 2022-06-28 19:31:36
+tags: JavaScript 
 categories: JavaScript
 ---
 
@@ -112,7 +112,7 @@ const listener = app.listen(process.env.PORT, function () {
 ```
 启动服务之后，点击button发送请求，可以看到控制台会打印event对象。
 
-{% asset 3.png %}
+{% asset_img 3.png %}
 
 在这个 request 对象中，咱们是能拿到 request 相关信息以及更多事件相关信息，根据这些信息咱们就能进行请求的改写及其他各种操作。
 
@@ -161,7 +161,7 @@ self.addEventListener('fetch', (event) => {
 
 首先给大家截了一张图让大家对缓存数据有个基本的结构了解，主要关心的点在于左侧 Cache 面板的 Cache Storage 部分。
 
-{% asset 4.png %}
+{% asset_img 4.png %}
 
 这里咱们需要区分 CacheStorage 以及 Cache 的区别，CacheStorage 是所有 Cache 的住目录，Cache 为 CacheStorage 下属缓存子目录，类比到数据库的话，可以将 CacheStorage 比做 DB，Cache 比做 Table，大概是这么个关系。
 
@@ -176,7 +176,7 @@ caches.open('api').then(cache => {
 })
 ```
 
-{% asset 5.png %}
+{% asset_img 5.png %}
 
 ## 一次缓存多个
 可以调用 cache 对象的 addAll 方法
@@ -190,7 +190,7 @@ caches.open('api').then(cache => {
 })
 ```
 
-{% asset 6.png %}
+{% asset_img 6.png %}
 
 ## 删除缓存
 调用 Cache 对象的 delete 方法可以删除指定缓存
