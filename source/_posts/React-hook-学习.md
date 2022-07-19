@@ -31,15 +31,15 @@ categories: React
 
 我们首先来看 这两种组件类型有什么区别：
 
-<iframe height="654" style="width: 100%;" scrolling="no" title="class 组件" src="https://codepen.io/shuliqi/embed/QWgJBQQ?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/shuliqi/pen/QWgJBQQ">
-  class 组件</a> by shuliqi (<a href="https://codepen.io/shuliqi">@shuliqi</a>)
+<iframe height="300" style="width: 100%;" scrolling="no" title="test1" src="https://codepen.io/gitducheng/embed/ZExeEGJ?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/gitducheng/pen/ZExeEGJ">
+  test1</a> by gitducheng (<a href="https://codepen.io/gitducheng">@gitducheng</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
-<iframe height="379" style="width: 100%;" scrolling="no" title="函数 组件" src="https://codepen.io/shuliqi/embed/eYRQPmB?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/shuliqi/pen/eYRQPmB">
-  函数 组件</a> by shuliqi (<a href="https://codepen.io/shuliqi">@shuliqi</a>)
+<iframe height="300" style="width: 100%;" scrolling="no" title="test2" src="https://codepen.io/gitducheng/embed/abYJbBj?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/gitducheng/pen/abYJbBj">
+  test2</a> by gitducheng (<a href="https://codepen.io/gitducheng">@gitducheng</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
@@ -162,9 +162,9 @@ const [name, setName] = useState(initName);
 
 ## 举个 🌰
 
-<iframe height="426" style="width: 100%;" scrolling="no" title="React Hook useEffect()" src="https://codepen.io/shuliqi/embed/ZEJzrby?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/shuliqi/pen/ZEJzrby">
-  React Hook useEffect()</a> by shuliqi (<a href="https://codepen.io/shuliqi">@shuliqi</a>)
+<iframe height="300" style="width: 100%;" scrolling="no" title="react hooks基本用法" src="https://codepen.io/gitducheng/embed/GRxWxJa?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/gitducheng/pen/GRxWxJa">
+  react hooks基本用法</a> by gitducheng (<a href="https://codepen.io/gitducheng">@gitducheng</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 ---
@@ -230,9 +230,9 @@ useEffect(() => {
 
 ## 举个 🌰
 
-<iframe height="732" style="width: 100%;" scrolling="no" title="React Hook useEffect()" src="https://codepen.io/shuliqi/embed/RwZbQRm?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/shuliqi/pen/RwZbQRm">
-  React Hook useEffect()</a> by shuliqi (<a href="https://codepen.io/shuliqi">@shuliqi</a>)
+<iframe height="300" style="width: 100%;" scrolling="no" title="react useEffect" src="https://codepen.io/gitducheng/embed/OJvpvNL?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/gitducheng/pen/OJvpvNL">
+  react useEffect</a> by gitducheng (<a href="https://codepen.io/gitducheng">@gitducheng</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
@@ -252,9 +252,9 @@ const domRef = useRef(initialValue);
 
 ## 举个 🌰
 
-<iframe height="459" style="width: 100%;" scrolling="no" title="React Hook useEffect()" src="https://codepen.io/shuliqi/embed/oNeNeNY?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/shuliqi/pen/oNeNeNY">
-  React Hook useEffect()</a> by shuliqi (<a href="https://codepen.io/shuliqi">@shuliqi</a>)
+<iframe height="300" style="width: 100%;" scrolling="no" title="react useRef" src="https://codepen.io/gitducheng/embed/vYRxRKP?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/gitducheng/pen/vYRxRKP">
+  react useRef</a> by gitducheng (<a href="https://codepen.io/gitducheng">@gitducheng</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
@@ -311,9 +311,9 @@ const { name } = React.useContext(MyContext);
 
 ## 完整的 🌰
 
-<iframe height="712" style="width: 100%;" scrolling="no" title="React Hook useRef()" src="https://codepen.io/shuliqi/embed/qBXZaOM?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/shuliqi/pen/qBXZaOM">
-  React Hook useRef()</a> by shuliqi (<a href="https://codepen.io/shuliqi">@shuliqi</a>)
+<iframe height="300" style="width: 100%;" scrolling="no" title="react useContext" src="https://codepen.io/gitducheng/embed/abYJYWK?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/gitducheng/pen/abYJYWK">
+  react useContext</a> by gitducheng (<a href="https://codepen.io/gitducheng">@gitducheng</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
@@ -344,9 +344,9 @@ const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 
 ## 举个 🌰
 
-<iframe height="556" style="width: 100%;" scrolling="no" title="React Hook useContext()" src="https://codepen.io/shuliqi/embed/zYdqKLm?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/shuliqi/pen/zYdqKLm">
-  React Hook useContext()</a> by shuliqi (<a href="https://codepen.io/shuliqi">@shuliqi</a>)
+<iframe height="300" style="width: 100%;" scrolling="no" title="react useMemo" src="https://codepen.io/gitducheng/embed/mdxWxqb?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/gitducheng/pen/mdxWxqb">
+  react useMemo</a> by gitducheng (<a href="https://codepen.io/gitducheng">@gitducheng</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
@@ -387,9 +387,9 @@ const memoizedCallback = useCallback(() => {
 
 ## ## 举个 🌰
 
-<iframe height="603" style="width: 100%;" scrolling="no" title="React Hook useMemo()" src="https://codepen.io/shuliqi/embed/XWaNzJO?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/shuliqi/pen/XWaNzJO">
-  React Hook useMemo()</a> by shuliqi (<a href="https://codepen.io/shuliqi">@shuliqi</a>)
+<iframe height="300" style="width: 100%;" scrolling="no" title="react useCallback" src="https://codepen.io/gitducheng/embed/xxWqWpa?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/gitducheng/pen/xxWqWpa">
+  react useCallback</a> by gitducheng (<a href="https://codepen.io/gitducheng">@gitducheng</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
@@ -415,9 +415,9 @@ useImperativeHandle(ref, createHandle, [deps]);
 
 ## 举个 🌰
 
-<iframe height="818" style="width: 100%;" scrolling="no" title="React Hook useImperativeHandle" src="https://codepen.io/shuliqi/embed/vYJyWdx?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/shuliqi/pen/vYJyWdx">
-  React Hook useImperativeHandle</a> by shuliqi (<a href="https://codepen.io/shuliqi">@shuliqi</a>)
+<iframe height="300" style="width: 100%;" scrolling="no" title="react useImperativeHandle" src="https://codepen.io/gitducheng/embed/xxWqWaQ?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/gitducheng/pen/xxWqWaQ">
+  react useImperativeHandle</a> by gitducheng (<a href="https://codepen.io/gitducheng">@gitducheng</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
@@ -438,11 +438,11 @@ useImperativeHandle(ref, createHandle, [deps]);
 
 - 使用 `useEffect`
 
-  <iframe height="505" style="width: 100%;" scrolling="no" title="React Hook useState()" src="https://codepen.io/shuliqi/embed/ZEJzrby?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-    See the Pen <a href="https://codepen.io/shuliqi/pen/ZEJzrby">
-    React Hook useState()</a> by shuliqi (<a href="https://codepen.io/shuliqi">@shuliqi</a>)
-    on <a href="https://codepen.io">CodePen</a>.
-  </iframe>
+  <iframe height="300" style="width: 100%;" scrolling="no" title="react  useLayoutEffect" src="https://codepen.io/gitducheng/embed/QWmpmYg?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/gitducheng/pen/QWmpmYg">
+  react  useLayoutEffect</a> by gitducheng (<a href="https://codepen.io/gitducheng">@gitducheng</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 上面例子中 点击 div，页面会更新一串随机数。当我们连续点击时，就会发现这串数字在发生抖动。这是因为当我们每次点击 `div`， count 会更新为 0， 之后 `useEffect` 内又把 `count `改为一串随机数。
 
@@ -454,11 +454,11 @@ useImperativeHandle(ref, createHandle, [deps]);
 
   如果我们把上面的例子改用`useLayoutEffect`。 我们来看看效果：
 
-  <iframe height="501" style="width: 100%;" scrolling="no" title="React Hook useLayoutEffect()" src="https://codepen.io/shuliqi/embed/eYEBKXj?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-    See the Pen <a href="https://codepen.io/shuliqi/pen/eYEBKXj">
-    React Hook useLayoutEffect()</a> by shuliqi (<a href="https://codepen.io/shuliqi">@shuliqi</a>)
-    on <a href="https://codepen.io">CodePen</a>.
-  </iframe>
+  <iframe height="300" style="width: 100%;" scrolling="no" title="react  useLayoutEffect" src="https://codepen.io/gitducheng/embed/QWmpmYg?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/gitducheng/pen/QWmpmYg">
+  react  useLayoutEffect</a> by gitducheng (<a href="https://codepen.io/gitducheng">@gitducheng</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
   我们可以看出来闪烁消失了。
 
@@ -491,8 +491,8 @@ const [state, dispatch] = useReducer(reducer, initialArg, init);
 
 ## 举个 🌰
 
-<iframe height="722" style="width: 100%;" scrolling="no" title="React Hook useReducer" src="https://codepen.io/shuliqi/embed/zYdZGON?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/shuliqi/pen/zYdZGON">
-  React Hook useReducer</a> by shuliqi (<a href="https://codepen.io/shuliqi">@shuliqi</a>)
+<iframe height="300" style="width: 100%;" scrolling="no" title="react useReducer" src="https://codepen.io/gitducheng/embed/XWEMqKO?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/gitducheng/pen/XWEMqKO">
+  react useReducer</a> by gitducheng (<a href="https://codepen.io/gitducheng">@gitducheng</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
