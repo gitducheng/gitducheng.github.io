@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <meta name="theme-color" content="#000000" />
+  <meta http-equiv="window-target" content="_top" />
+  
+  <title>关于Delete`CR`eslint(prettier/prettier) 报错的解决方案 | Pydc</title>
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2020/06/06/%E5%85%B3%E4%BA%8EDelete%60CR%60eslint-prettier-prettier-%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html">
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/gitducheng" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Pydc的Blog</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">不会修电脑的程序员不是好工头</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 北京, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">浏览器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/JavaScript/">JavaScript</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/28/service-worker%E5%85%A5%E9%97%A8/" class="title">service worker入门</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-28T11:31:36.000Z" itemprop="datePublished">2022-06-28</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Vue/">Vue</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/17/Vue2-x%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%AF%A6%E8%A7%A3/" class="title">Vue2.x的生命周期详解</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-17T11:31:36.000Z" itemprop="datePublished">2022-06-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/12/Chrome%20101%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%9Afetchpriority/" class="title">Chrome 101新特性：fetchpriority</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-12T02:10:00.000Z" itemprop="datePublished">2022-06-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/JavaScript/">JavaScript</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/02/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E5%BE%AE%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="title">简单实现一个微前端框架</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-02T10:11:20.000Z" itemprop="datePublished">2022-05-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/React/">React</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/09/14/React-hook-%E5%AD%A6%E4%B9%A0/" class="title">React hook 学习</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-09-14T13:27:32.000Z" itemprop="datePublished">2021-09-14</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-关于Delete`CR`eslint-prettier-prettier-报错的解决方案" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于Delete`CR`eslint(prettier/prettier) 报错的解决方案
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/06/06/%E5%85%B3%E4%BA%8EDelete%60CR%60eslint-prettier-prettier-%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="article-date">
+	  <time datetime="2020-06-06T12:47:09.000Z" itemprop="datePublished">2020-06-06</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/JavaScript/" rel="tag">JavaScript</a>
+  </span>
+
+
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="问题的提出"><a href="#问题的提出" class="headerlink" title="问题的提出"></a>问题的提出</h2><p>由于之前是一直使用 <code>mac</code> 笔记本开发，突然使用 <code>windows</code> 开发，发现拉完代码之后， 发现在<code>npm run dev</code> 运行代码之后。发现有如下的问题</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Delete</span> <span class="string">`CR`</span><span class="title function_">eslint</span>(prettier/prettier)</span><br></pre></td></tr></table></figure>
+
+ <span id="more"></span>
+
+<img src="/2020/06/06/%E5%85%B3%E4%BA%8EDelete%60CR%60eslint-prettier-prettier-%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/1.png" class="">
+
+<h2 id="问题的根源"><a href="#问题的根源" class="headerlink" title="问题的根源"></a>问题的根源</h2><p>出现的问题的原因到底是什么呢？</p>
+<p>根据调查发现出问题 : <strong>windows下和linux下的文本文件的换行符不一致。</strong></p>
+<ul>
+<li><code>Windows</code>在换行的时候，同时使用了回车符<code>CR(carriage-return character)和换行符LF(linefeed character)</code></li>
+<li>而<code>Mac</code>和<code>Linux</code>系统，仅仅使用了换行符<code>LF</code></li>
+<li>老版本的<code>Mac</code>系统使用的是回车符<code>CR</code></li>
+</ul>
+<p>表格解释如下：</p>
+<table>
+<thead>
+<tr>
+<th><strong>Windows</strong></th>
+<th><strong>Linux&#x2F;Mac</strong></th>
+<th><strong>Old Mac(pre-OSX)</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CRLF</td>
+<td>LF</td>
+<td>CR</td>
+</tr>
+<tr>
+<td>‘\n\r’</td>
+<td>‘\n’</td>
+<td>‘\r’</td>
+</tr>
+</tbody></table>
+<p>因此，文本文件在不同系统下创建和使用时就会出现不兼容的问题。</p>
+<p>所以出现上面的报错是因为我的同事是在mac环境下提交的代码。文件默认是以LF结尾的。</p>
+<p>当我使用 <code>Windows</code> 电脑<code>git clone</code>代码的时候， 若我的<code>autocrlf</code>(在<code>windows</code>下安装<code>git</code>，该选项默认为<code>true</code>)为true，那么文件每行会被自动转成以CRLF结尾，若对文件不做任何修改，pre-commit执行eslint的时候就会提示你删除CR。</p>
+<h2 id="问题的解决"><a href="#问题的解决" class="headerlink" title="问题的解决"></a>问题的解决</h2><p>下面是上网查到的各种解决办法以及他们的优缺点。</p>
+<h3 id="Crtl-S保存文件"><a href="#Crtl-S保存文件" class="headerlink" title="Crtl+S保存文件"></a>Crtl+S保存文件</h3><p>按Crtl+S保存当前报错文件，eslint错误消失，但是Git暂存区多了个文件改动记录，对比Working tree没发现任何不同。</p>
+<p>缺点：你不可能一一保存所有文件，麻烦，还要commit，多余。</p>
+<h3 id="yarn-run-lint-–fix"><a href="#yarn-run-lint-–fix" class="headerlink" title="yarn run lint –fix"></a>yarn run lint –fix</h3><p>比上面省事，eslint错误消失，但暂存区多了n个文件改动记录，对比Working tree也没发现任何不同。</p>
+<p>缺点：需要commit所有文件，多余。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/prettier/eslint-plugin-prettier/issues/114">参考的资料：”error Delete <code>⏎</code> prettier&#x2F;prettier” in .vue files</a></p>
+<h3 id="配置-prettierrc-文件"><a href="#配置-prettierrc-文件" class="headerlink" title="配置.prettierrc 文件"></a>配置.prettierrc 文件</h3><p>在项目的根目录的<code>.prettierrc</code>文件中写入即可。其实就是不让prettier检测文件每行结束的格式.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;endOfLine&quot;</span>: <span class="string">&quot;auto&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>缺点：不能兼容跨平台开发，从前端工程化上讲没有做到尽善尽美。</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/53516594/why-do-i-keep-getting-delete-cr-prettier-prettier">参考的资料：Why do I keep getting Delete ‘cr’ [prettier&#x2F;prettier]?</a></p>
+<h3 id="core-autocrlf配置"><a href="#core-autocrlf配置" class="headerlink" title="core.autocrlf配置"></a>core.autocrlf配置</h3><p>使用git 的一个配置属性： core.autocrlf </p>
+<ul>
+<li><p>Git 可以在你提交的时候自动的把行结束符CRLF转换成LF，而在签出代码时把LF转换成CRLF。用<code>core.autocrlf</code>来打开此项功能。如果是在Windows 系统上，把它设置为true。这样当签出代码时。LF会被转换成CRLF。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --<span class="variable language_">global</span> core.<span class="property">autocrlf</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mac 系统使用LF作为行结束符， 因此你不想Git在签出文件时进行自动的转换；当一个CRLF为行结束符的文件不小心被引入时你想修正，把core.autocrlf 设置为input 来告诉Git 在提交的时候把CRLF 转成LF。签出时不转换；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --<span class="variable language_">global</span> core.<span class="property">autocrlf</span> input</span><br></pre></td></tr></table></figure>
+
+<p>这样会在Windows系统上的签出文件中保留CRLF，会在Mac和Linux系统上，包括仓库中保留LF。</p>
+</li>
+<li><p>如果你是Windows程序员，且正在开发仅运行在Windows上的项目，可以设置false取消此功能，把回车符记录在库中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global core.autocrlf false</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>遇到问题的时候查找了很多的资料。但是结局的办法都不是很尽美 如方法1，方法 2，方法 3，都存在一定的缺点。 最后一个解决办法才是从灵魂上解决了问题。 所以在解决的问题还是追其根源。从根本上解决问题。</p>
+
+      
+    </div>
+    <div class="article-footer">
+      
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/gitducheng" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/gitducheng" target="_blank"><span class="text-dark">Pydc的Blog</span><small class="ml-1x">不会修电脑的程序员不是好工头</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+</div>
+</main>
+
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <meta name="theme-color" content="#000000" />
+  <meta http-equiv="window-target" content="_top" />
+  
+  <title>Chrome 101新特性：fetchpriority | Pydc</title>
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2022/06/12/Chrome%20101%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%9Afetchpriority/index.html">
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/gitducheng" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Pydc的Blog</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">不会修电脑的程序员不是好工头</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 北京, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">浏览器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/JavaScript/">JavaScript</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/28/service-worker%E5%85%A5%E9%97%A8/" class="title">service worker入门</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-28T11:31:36.000Z" itemprop="datePublished">2022-06-28</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Vue/">Vue</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/17/Vue2-x%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%AF%A6%E8%A7%A3/" class="title">Vue2.x的生命周期详解</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-17T11:31:36.000Z" itemprop="datePublished">2022-06-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/12/Chrome%20101%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%9Afetchpriority/" class="title">Chrome 101新特性：fetchpriority</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-12T02:10:00.000Z" itemprop="datePublished">2022-06-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/JavaScript/">JavaScript</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/02/%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E5%BE%AE%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="title">简单实现一个微前端框架</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-02T10:11:20.000Z" itemprop="datePublished">2022-05-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/React/">React</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/09/14/React-hook-%E5%AD%A6%E4%B9%A0/" class="title">React hook 学习</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-09-14T13:27:32.000Z" itemprop="datePublished">2021-09-14</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Chrome 101新特性：fetchpriority" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Chrome 101新特性：fetchpriority
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/06/12/Chrome%20101%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%9Afetchpriority/" class="article-date">
+	  <time datetime="2022-06-12T02:10:00.000Z" itemprop="datePublished">2022-06-12</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a>
+  </span>
+
+
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>最近发现Chrome 101版本更新了一个新特性，所以顺便学习总结了一下。</p>
+<p>预加载可以在网页全部加载之前，对一些主要内容进行加载，以提供给用户更好的体验，减少等待的时间。但是，一些情况下，我们还需要对预加载的资源优先级进行进一步的划分。预加载对资源优先级的设置并不能满足，于是有了可以对资源优先级进行补充的fetchpriority。</p>
+<h2 id="为了解决什么问题"><a href="#为了解决什么问题" class="headerlink" title="为了解决什么问题"></a>为了解决什么问题</h2><ul>
+<li>影响资源获取的优先级；</li>
+<li>补充预加载后的资源加载顺序；<br>优先级指示资源对浏览器的相对优先级，它们可以实现最佳加载并改善Web用户体验。</li>
+</ul>
+<h2 id="浏览器中的资源优先级"><a href="#浏览器中的资源优先级" class="headerlink" title="浏览器中的资源优先级"></a>浏览器中的资源优先级</h2><p>当浏览器开始解析网页，并开始下载图片、js 以及 css 等资源的时候，浏览器会为每个资源分配一个代表资源下载优先级的 fetch priority 标志。<br>而资源下载的顺序就取决于这个优先级标志，这个优先级标志的计算逻辑会受很多因素的影响：</p>
+<ul>
+<li>CSS、字体、脚本、图像和第三方资源分配了不同的优先级。</li>
+<li>引用文档中资源的位置或顺序也会影响资源的优先级。</li>
+<li>预加载资源提示有助于浏览器更快地发现资源，从而在文档加载之前加载资源并影响优先级。</li>
+<li>脚本设置async或defer影响优先级计算。<br>考虑以上因素，下表统计了Chrome中大多数资源的优先级和顺序：</li>
+</ul>
+<img src="/2022/06/12/Chrome%20101%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%9Afetchpriority/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD%E9%A1%BA%E5%BA%8F.png" class="">
+
+<p>浏览器按照资源被发现的顺序下载资源，可以在 DevTools Network 下看到分配给不同资源的优先级：</p>
+<img src="/2022/06/12/Chrome%20101%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%9Afetchpriority/1.png" class="">
+<img src="/2022/06/12/Chrome%20101%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%9Afetchpriority/2.png" class="">
+
+<p>但是并不是所有情况下默认的下载优先级都是最佳的。</p>
+<h2 id="什么时候需要优先提示"><a href="#什么时候需要优先提示" class="headerlink" title="什么时候需要优先提示"></a>什么时候需要优先提示</h2><p>技术应用场景：</p>
+<ul>
+<li>同时有几个首屏图像，但它们不需要具有相同的优先级。例如，在图像轮播中，只有第一个可见图像需要比其他图像更高的优先级；</li>
+<li>可见区域的图像为低优先级，但布局完成后，Chrome发现它们在视图中，会自动提高它们的优先级。这时候页面会增加加载图像的延迟，使用优先级提示可以让图像以高优先级开始，并更早地开始加载。</li>
+<li>将脚本声明为async或defer告诉浏览器异步加载它们，这时脚本也被分配了“低”优先级。但是希望在确保异步下载的同时提高它们的优先级，特别是对于任何对用户体验至关重要的脚本。</li>
+<li>浏览器为 CSS 和字体分配了高优先级，但所有这些资源可能并不同样重要，可以使用优先级提示来降低其中一些资源的优先级。</li>
+<li>使用fetch()异步获取资源或数据时，浏览器为 Fetch 分配了高优先级。在某些情况下，我们可能不希望以高优先级执行所有请求，而是使用不同的优先级提示。例如，后台 API 调用可以标记为低优先级，交互式 API 调用可以标记为高优先级。</li>
+<li>在资源争夺可用网络带宽的环境中，优先级带来的显着收益将更加相关。</li>
+</ul>
+<h2 id="如何使用fetchpriority属性"><a href="#如何使用fetchpriority属性" class="headerlink" title="如何使用fetchpriority属性"></a>如何使用fetchpriority属性</h2><p>fetchpriority 属性可以指定三个值：</p>
+<ul>
+<li>high：你认为该资源具有高优先级，并希望浏览器对其进行优先级排序；</li>
+<li>low：你认为该资源的优先级较低，并希望浏览器降低其优先级；</li>
+<li>auto：采用浏览器的默认优先级；</li>
+</ul>
+<p>使用示例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- We don&#x27;t want a high priority for this above-the-fold image --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/images/in_viewport_but_not_important.svg&quot;</span> <span class="attr">fetchpriority</span>=<span class="string">&quot;low&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;I&#x27;m an unimportant image!&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- We want to initiate an early fetch for a resource, but also deprioritize it --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;preload&quot;</span> <span class="attr">href</span>=<span class="string">&quot;/js/script.js&quot;</span> <span class="attr">as</span>=<span class="string">&quot;script&quot;</span> <span class="attr">fetchpriority</span>=<span class="string">&quot;low&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">fetch</span>(<span class="string">&#x27;https://example.com/&#x27;</span>, &#123;<span class="attr">priority</span>: <span class="string">&#x27;low&#x27;</span>&#125;)</span></span><br><span class="line"><span class="language-javascript">  .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// Trigger a low priority fetch</span></span></span><br><span class="line"><span class="language-javascript">  &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- The third-party contents of this iframe can load with a low priority --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;https://example.com&quot;</span> <span class="attr">width</span>=<span class="string">&quot;600&quot;</span> <span class="attr">height</span>=<span class="string">&quot;400&quot;</span> <span class="attr">fetchpriority</span>=<span class="string">&quot;low&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>实际应用：提升 LCP 图像的优先级</p>
+<p>比如，在 Google Flights 这个网页中，影响它 LCP 指标的主要原因是它的背景图片，现在我们用 fetchpriority 属性提升它加载的优先级：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;lcp-image.jpg&quot;</span> <span class="attr">fetchpriority</span>=<span class="string">&quot;high&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>当优先级设置为高时，LCP从2.6秒提高到1.9秒</p>
+<video id="video" controls="" preload="none" poster="封面">
+      <source id="mp4" src="4.mp4" type="video/mp4">
+</videos>
+
+<h3 id="降低首屏图片的优先级"><a href="#降低首屏图片的优先级" class="headerlink" title="降低首屏图片的优先级"></a>降低首屏图片的优先级</h3><p>使用 fetchpriority 属性降低可能不重要的首屏图片的优先级，比如轮播图中后面的图片：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;carousel&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/carousel-1.jpg&quot;</span> <span class="attr">fetchpriority</span>=<span class="string">&quot;high&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/carousel-2.jpg&quot;</span> <span class="attr">fetchpriority</span>=<span class="string">&quot;low&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/carousel-3.jpg&quot;</span> <span class="attr">fetchpriority</span>=<span class="string">&quot;low&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/carousel-4.jpg&quot;</span> <span class="attr">fetchpriority</span>=<span class="string">&quot;low&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="降低预加载资源的优先级"><a href="#降低预加载资源的优先级" class="headerlink" title="降低预加载资源的优先级"></a>降低预加载资源的优先级</h3><p>想要阻止预加载资源和其他关键资源的竞争，可以降低其优先级：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Lower priority only for non-critical preloaded scripts --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;preload&quot;</span> <span class="attr">as</span>=<span class="string">&quot;script&quot;</span> <span class="attr">href</span>=<span class="string">&quot;critical-script.js&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;preload&quot;</span> <span class="attr">href</span>=<span class="string">&quot;/js/script.js&quot;</span> <span class="attr">as</span>=<span class="string">&quot;script&quot;</span> <span class="attr">fetchpriority</span>=<span class="string">&quot;low&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Preload CSS without blocking other resources --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;preload&quot;</span> <span class="attr">as</span>=<span class="string">&quot;style&quot;</span> <span class="attr">href</span>=<span class="string">&quot;theme.css&quot;</span> <span class="attr">fetchpriority</span>=<span class="string">&quot;low&quot;</span> <span class="attr">onload</span>=<span class="string">&quot;this.rel=&#x27;stylesheet&#x27;&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="调整脚本的优先级"><a href="#调整脚本的优先级" class="headerlink" title="调整脚本的优先级"></a>调整脚本的优先级</h3><p>如果页面上有一些必要的交互脚本，但不需要阻塞其他资源，可以把它们标记为具有高优先级，同时异步加载它们：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;async_but_important.js&quot;</span> <span class="attr">async</span> <span class="attr">importance</span>=<span class="string">&quot;high&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果脚本依赖于特定的 DOM 节点，则它们不能被标记为异步加载。但是如果它们不是首屏渲染必备的，可以降低它们的优先级：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;blocking_but_unimportant.js&quot;</span> <span class="attr">importance</span>=<span class="string">&quot;low&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="调整fetch的优先级"><a href="#调整fetch的优先级" class="headerlink" title="调整fetch的优先级"></a>调整fetch的优先级</h3><p>浏览器默认会以高优先级执行 fetch 请求，可以降低不太关键的数据请求的优先级：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Important validation data (high by default)</span></span><br><span class="line"><span class="keyword">let</span> authenticate = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&#x27;/user&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Less important content data (suggested low)</span></span><br><span class="line"><span class="keyword">let</span> suggestedContent = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&#x27;/content/suggested&#x27;</span>, &#123;<span class="attr">priority</span>: <span class="string">&#x27;low&#x27;</span>&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>优先级提示可以提高特定用例中的性能，有一些事情需要注意：</p>
+<ul>
+<li>fetchpriority属性是一个提示，而不是一个指令。浏览器会尽量尊重开发者的偏好，如果发生冲突，浏览器也可能会根据需要应用其对资源优先级的偏好。</li>
+<li>优先级提示不应与预加载混淆，它们都是不同的，因为：<ul>
+<li>预加载是强制获取而不是提示。</li>
+<li>预加载更容易被观察和测量。</li>
+</ul>
+</li>
+<li>优先级提示可以通过增加优先级的粒度来补充预加载。如果已经在页面顶部为 LCP 图像指定了预加载，那么“高”优先级提示可能不会带来显着的收益。但是，如果预加载是在其他不太重要的资源之后，那么高优先级的提示可以提高LCP。如果关键图像是 CSS 背景图像，则应使用fetchpriority &#x3D; “high”。</li>
+<li>CDN没有统一实现 HTTP&#x2F;2 优先级。</li>
+</ul>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><h3 id="importance"><a href="#importance" class="headerlink" title="importance"></a>importance</h3><p>优先提示首先在 2018 年作为原始试验在 Chrome 中进行了试验，然后在 2021 年再次使用该importance属性。作为 Web 标准流程的一部分，在HTML中该属性已更改为fetchpriority，JavaScript中为priority 。</p>
+<h3 id="fetchpriority-浏览器兼容性"><a href="#fetchpriority-浏览器兼容性" class="headerlink" title="fetchpriority 浏览器兼容性"></a>fetchpriority 浏览器兼容性</h3><p>目前，优先级提示仅在基于 Chromium 的浏览器中可用。其他浏览器引擎或早期版本的 Chromium 浏览器将忽略该属性并使用其默认的优先级启发式。</p>
+<img src="/2022/06/12/Chrome%20101%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%9Afetchpriority/3.png" class="">
+      
+    </div>
+    <div class="article-footer">
+      
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/gitducheng" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/gitducheng" target="_blank"><span class="text-dark">Pydc的Blog</span><small class="ml-1x">不会修电脑的程序员不是好工头</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+</div>
+</main>
+
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
