@@ -13,9 +13,9 @@
   <meta name="theme-color" content="#000000" />
   <meta http-equiv="window-target" content="_top" />
   
-  <title>归档: 2020/6 | Pydc</title>
+  <title>带你了解边缘计算节点 | Pydc</title>
   <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/archives/2020/06/index.html">
+  <link rel="canonical" href="http://example.com/2022/07/28/%E5%B8%A6%E4%BD%A0%E4%BA%86%E8%A7%A3%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97%E8%8A%82%E7%82%B9/index.html">
   
     <link rel="icon" href="/favicon.png" type="image/x-icon">
   
@@ -271,48 +271,159 @@
   
   
 <main class="main" role="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">归档: 2020/6</h1>
-	      <p class="text-muted">共 9 篇文章</p>
-	    </header>
-	    <div class="article-body">
-	      
-  
-  
+  <div class="content">
+  <article id="post-带你了解边缘计算节点" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-    
+    <div class="article-header">
       
+        
+  
+    <h1 class="article-title" itemprop="name">
+      带你了解边缘计算节点
+    </h1>
+  
+
       
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2020" aria-expanded="true">
-              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-              2020
-            </a>
-            <!-- <a href="/archives/2020" class="archive-year">2020</a> -->
-          </h3>
-        </div>
-        <div id="collapse2020" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2020">
-        <div class="panel-body">
-          <div class="collection">
-    
-    
-<a href="/2020/06/06/%E5%85%B3%E4%BA%8EDelete%60CR%60eslint-prettier-prettier-%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="collection-item"   itemprop="url">
-  <time datetime="2020-06-06T12:47:09.000Z" itemprop="datePublished">2020-06-06</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 关于Delete`CR`eslint(prettier/prettier) 报错的解决方案
-</a>
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/07/28/%E5%B8%A6%E4%BD%A0%E4%BA%86%E8%A7%A3%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97%E8%8A%82%E7%82%B9/" class="article-date">
+	  <time datetime="2022-07-28T08:00:04.000Z" itemprop="datePublished">2022-07-28</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E4%BA%91%E4%B8%BB%E6%9C%BA/">云主机</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E4%BA%91%E4%B8%BB%E6%9C%BA/" rel="tag">云主机</a>
+  </span>
 
 
-  
-  
-    </div></div></div></section>
-  
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h1><p>本篇将边缘计算节点功能分为功能类和监控类，功能类包括对虚机的创建、修改、删除等，监控类包括平台对用户虚机的监控。主要目的是给大家通俗易懂的介绍边缘计算节点该如何创建，每个功能模块的作用。</p>
+<h1 id="二、功能类"><a href="#二、功能类" class="headerlink" title="二、功能类"></a>二、功能类</h1><h2 id="边缘服务（云服务）"><a href="#边缘服务（云服务）" class="headerlink" title="边缘服务（云服务）"></a>边缘服务（云服务）</h2><h3 id="配置虚机"><a href="#配置虚机" class="headerlink" title="配置虚机"></a>配置虚机</h3><h4 id="选择实例规格（电脑硬件配置）"><a href="#选择实例规格（电脑硬件配置）" class="headerlink" title="选择实例规格（电脑硬件配置）"></a>选择实例规格（电脑硬件配置）</h4><p>首先按架构，大致分为x86、裸金属、ARM，每种架构下再细分各种特性规格（通用型、计算型、GPU型…）。</p>
+<h5 id="x86架构"><a href="#x86架构" class="headerlink" title="x86架构"></a>x86架构</h5><blockquote>
+<p>X86架构是微处理器执行的计算机语言指令集，指一个intel通用计算机系列的标准编号缩写，也标识一套通用的计算机指令集合。 </p>
+</blockquote>
+<p>最为我们所知的就是intel的CPU，有i3、i5、i7、i9等系列。</p>
+<h5 id="ARM架构"><a href="#ARM架构" class="headerlink" title="ARM架构"></a>ARM架构</h5><blockquote>
+<p>进阶精简指令集机器，是一个32位精简指令集（RISC）处理器架构。</p>
+</blockquote>
+<p>最为我们所知的就是Apple的M1、M2。</p>
+<h5 id="裸金属服务器"><a href="#裸金属服务器" class="headerlink" title="裸金属服务器"></a>裸金属服务器</h5><blockquote>
+<p>一台既具有传统物理服务器特点的硬件设备，又具备云计算技术的虚拟化服务功能，是硬件和软件优势结合的产物。</p>
+</blockquote>
+<p>不是一种指令集架构，因为它不是以指令集划分的，而是以传统虚拟机为对比划分出来的一种服务器。例如一般我们创建虚拟机，首先需要有一台真实电脑，电脑是windows或linux系统，再在电脑安装VM ware软件来创建虚拟机。但是，裸金属没有操作系统，也就是没有windows或Linux，创建虚拟机的软件直接安装在硬件上。原本的VM控制软件由安装在系统上，变成了安装在电脑硬件上。</p>
+<p><strong>这样的服务器有什么优势？</strong></p>
+<p>1、稳定性</p>
+<p>如果VM控制软件是安装在系统，系统万一蓝屏（死机），那么所有跑在该实体电脑上的虚拟机都会挂掉，一些对系统稳定性、安全性和高标准敏感度高的场合是不允许这种情况的。那么回来说说裸金属服务器，因为VM控制软件运行在硬件上，少了一层操作系统，再者软件稳定性优于系统，所以裸金属服务器是一些企业用户的首选。</p>
+<p>2、隔离性</p>
+<p>安装在系统上的虚拟机可以访问到系统上的资源，虽然一般会被禁止，但不能保证安全。裸金属服务器因为没有操作系统，虚拟机之间是不可访问的，所以安全性大于传统虚拟机。</p>
+<h5 id="规格分类"><a href="#规格分类" class="headerlink" title="规格分类"></a>规格分类</h5><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>特点</th>
+<th>CPU和内存配比</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>通用型</td>
+<td>适用于中小型数据库系统、搜索集群，数据分析和计算，计算集群、依赖内存的数据处理等场景</td>
+<td>1:4</td>
+</tr>
+<tr>
+<td>计算型</td>
+<td>适用于数据分析、分布式计算，Web前端等场景</td>
+<td>1:2</td>
+</tr>
+<tr>
+<td>内存型</td>
+<td>适用于高性能边缘数据服务，内存数据服务或分布式内存缓存等场景</td>
+<td>1:8</td>
+</tr>
+<tr>
+<td>本地SSD&#x2F;HDD型</td>
+<td>适用于对读写有高要求场景</td>
+<td>1:4、1:8</td>
+</tr>
+<tr>
+<td>GPU型</td>
+<td>适用于AI训练、影视渲染等场景</td>
+<td>1:4</td>
+</tr>
+</tbody></table>
+<h4 id="镜像（系统）"><a href="#镜像（系统）" class="headerlink" title="镜像（系统）"></a>镜像（系统）</h4><p>有CentOS、Debian、Ubuntu、Windows几类，选择合适的即可，除个别规格需要指定系统，没啥区别。</p>
+<h4 id="选择硬盘（HDD、SSD）"><a href="#选择硬盘（HDD、SSD）" class="headerlink" title="选择硬盘（HDD、SSD）"></a>选择硬盘（HDD、SSD）</h4><p>选择性能适合的就行。</p>
+<h4 id="配置网络（网络类型、带宽）"><a href="#配置网络（网络类型、带宽）" class="headerlink" title="配置网络（网络类型、带宽）"></a>配置网络（网络类型、带宽）</h4><p>创建的虚机为IPv4，还是同时有IPv4、IPv6地址，设置网络带宽大小。</p>
+<h4 id="选择节点（地区、运营商、集群）"><a href="#选择节点（地区、运营商、集群）" class="headerlink" title="选择节点（地区、运营商、集群）"></a>选择节点（地区、运营商、集群）</h4><p>选择虚机创建的地区（华北、华南、华东…），无太大区别。</p>
+<h3 id="修改配置信息"><a href="#修改配置信息" class="headerlink" title="修改配置信息"></a>修改配置信息</h3><h4 id="启用IPv6"><a href="#启用IPv6" class="headerlink" title="启用IPv6"></a>启用IPv6</h4><p>云服务启用IPv6后，新增的实例会启用IPv6，已创建的IPv4实例会在下次重启后启用IPv6。</p>
+<h4 id="修改带宽峰值"><a href="#修改带宽峰值" class="headerlink" title="修改带宽峰值"></a>修改带宽峰值</h4><p>调整带宽峰值大小，实例需重启生效。</p>
+<h4 id="批量启、停、删除"><a href="#批量启、停、删除" class="headerlink" title="批量启、停、删除"></a>批量启、停、删除</h4><p>以服务为单位，进行虚机的常规批量操作。</p>
+<h2 id="实例管理"><a href="#实例管理" class="headerlink" title="实例管理"></a>实例管理</h2><h3 id="新增实例"><a href="#新增实例" class="headerlink" title="新增实例"></a>新增实例</h3><p>安装所选云服务的配置，在该服务下新增实例。</p>
+<h3 id="VNC"><a href="#VNC" class="headerlink" title="VNC"></a>VNC</h3><p>用于登录进入虚机。</p>
+<h3 id="启、停、删除…"><a href="#启、停、删除…" class="headerlink" title="启、停、删除…"></a>启、停、删除…</h3><p>将所选虚机进行常规批量操作。</p>
+<h2 id="镜像管理"><a href="#镜像管理" class="headerlink" title="镜像管理"></a>镜像管理</h2><p>可上传自定义镜像，创建云服务时可以使用自定义镜像。</p>
+<h2 id="私有网络（VPC）"><a href="#私有网络（VPC）" class="headerlink" title="私有网络（VPC）"></a>私有网络（VPC）</h2><blockquote>
+<p>虚拟私有云（Virtual Private Cloud，以下简称VPC），为弹性云服务器构建隔离的、用户自主配置和管理的虚拟网络环境，提升用户云中资源的安全性，简化用户的网络部署。</p>
+</blockquote>
+<p>简单理解为用户在某一地区节点上的标识，不可进行操作。</p>
+<h2 id="四层-x2F-七层负载均衡"><a href="#四层-x2F-七层负载均衡" class="headerlink" title="四层&#x2F;七层负载均衡"></a>四层&#x2F;七层负载均衡</h2><p>负载均衡，英文名称为Load Balance，其含义就是指将负载（工作任务）进行平衡、分摊到多个操作单元上进行运行<br>配置负载均衡，需要绑定eip和实例才能生效。</p>
+<h2 id="弹性公网IP（EIP）"><a href="#弹性公网IP（EIP）" class="headerlink" title="弹性公网IP（EIP）"></a>弹性公网IP（EIP）</h2><blockquote>
+<p>弹性公网IP（Elastic IP Address，简称EIP）是可以独立购买和持有的公网IP地址资源。</p>
+</blockquote>
+<p>用作负载均衡对外暴露使用的IP。</p>
+<h2 id="外网防火墙"><a href="#外网防火墙" class="headerlink" title="外网防火墙"></a>外网防火墙</h2><p>配置流量的出入向规则，例如限制IP地址、端口、协议等。</p>
+<h2 id="NAT网关"><a href="#NAT网关" class="headerlink" title="NAT网关"></a>NAT网关</h2><blockquote>
+<p>NAT网关是一种网络地址转换服务，提供NAT代理（SNAT和DNAT）能力。SNAT网关提供公网地址转换服务，而DNAT网关提供私网地址转换服务。</p>
+</blockquote>
+<p>SNAT：内部实例可以访问公网服务，公网服务不能访问内部实例。</p>
+<p>DNAT：内部实例对外提供服务。</p>
+<p>适用场景：一般用于实例没有公网IP，只有私网IP的情况下。</p>
+<h2 id="VPC组网（边缘互联）"><a href="#VPC组网（边缘互联）" class="headerlink" title="VPC组网（边缘互联）"></a>VPC组网（边缘互联）</h2><p>简单来说，将两个VPC绑定在一起，两个VPC下的虚机可以通信。</p>
+<p>适用场景：</p>
+<pre><code>•	原始vpc的时候网段建小了，网段不够分；
+•	VPC内业务所需设备数超过500台，vpc内目前承诺可容纳500台设备；
+</code></pre>
+<h1 id="三、监控类"><a href="#三、监控类" class="headerlink" title="三、监控类"></a>三、监控类</h1><h2 id="数据监控"><a href="#数据监控" class="headerlink" title="数据监控"></a>数据监控</h2><p>可查询实例的CPU、带宽、网络使用情况。</p>
+<h2 id="报警服务"><a href="#报警服务" class="headerlink" title="报警服务"></a>报警服务</h2><p>可配置规则监控实例的使用情况，如CPU使用率、网络丢包率，超过一定百分比进行报警。</p>
+<h2 id="计费用量"><a href="#计费用量" class="headerlink" title="计费用量"></a>计费用量</h2><p>可查询用户的实例对资源的使用情况。</p>
+<h2 id="系统事件"><a href="#系统事件" class="headerlink" title="系统事件"></a>系统事件</h2><p>记录用户的实例、LB、EIP等的重启、删除等操作。</p>
 
-	    </div>
-  	</article>
-  	 	
+      
+    </div>
+    <div class="article-footer">
+      
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/gitducheng" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/gitducheng" target="_blank"><span class="text-dark">Pydc的Blog</span><small class="ml-1x">不会修电脑的程序员不是好工头</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+</div>
 </main>
 
   <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
